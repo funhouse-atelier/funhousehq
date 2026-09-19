@@ -1,7 +1,0 @@
-dist
-.astro
-node_modules
-package-lock.json
-src/content/vault
-post-dates.json
-.bloglide-build.json

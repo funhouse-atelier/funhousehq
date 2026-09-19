@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -20,5 +22,10 @@
   },
   "engines": {
     "node": ">=24.21.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.8",
+    "prettier-plugin-astro": "^1.0.1",
+    "prettier-plugin-tailwindcss": "^0.8.1"
   }
 }
