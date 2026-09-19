@@ -11,7 +11,7 @@ export const SITE = {
   email: 'info@funhousehq.com',
 
   // TODO: replace with your Cal.com booking link (e.g. https://cal.com/funhouse/discovery).
-  bookingUrl: 'https://cal.com/',
+  bookingUrl: 'https://cal.com/funhousehq/20min',
 }
 
 export const NAV = [
