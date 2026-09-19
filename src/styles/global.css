@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-@import '@fontsource/rye/latin-400.css';
-@import '@fontsource-variable/fredoka/index.css';
-@import '@fontsource-variable/nunito/index.css';
+@import "tailwindcss";
+@import "@fontsource/rye/latin-400.css";
+@import "@fontsource-variable/fredoka/index.css";
+@import "@fontsource-variable/nunito/index.css";
 
 @theme {
   /* Brand palette */
@@ -72,9 +72,10 @@
   --color-grape-900: #1a0014;
 
   /* Type: font-display (Rye), font-head (Fredoka), font-sans (body default) */
-  --font-display: 'Rye', Georgia, serif;
-  --font-head: 'Fredoka Variable', 'Nunito Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-sans: 'Nunito Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Rye", Georgia, serif;
+  --font-head:
+    "Fredoka Variable", "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
 
   /* Hard "sticker" shadows that match the logo's thick outlines.
      Recolor with shadow-flame, shadow-marigold, etc. */
@@ -96,9 +97,14 @@
 /* Circus-tent awning: flame and cream stripes with a scalloped bottom edge */
 @utility awning {
   height: 56px;
-  background: repeating-linear-gradient(90deg, var(--color-flame) 0 48px, var(--color-cream-200) 48px 96px);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-flame) 0 48px,
+    var(--color-cream-200) 48px 96px
+  );
   mask:
-    radial-gradient(circle 24px at 24px 32px, #000 98%, transparent) 0 0 / 48px 100% repeat-x,
+    radial-gradient(circle 24px at 24px 32px, #000 98%, transparent) 0 0 / 48px
+      100% repeat-x,
     linear-gradient(#000, #000) 0 0 / 100% 32px no-repeat;
 }
 

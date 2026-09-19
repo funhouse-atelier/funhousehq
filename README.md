@@ -13,15 +13,15 @@ npm run preview   # serve the built site
 
 ## Where things live
 
-| What | File |
-| --- | --- |
-| Email, booking link, form endpoint | `src/data/site.ts` |
-| Services, prices, what's included, Stripe links | `src/data/services.ts` |
-| Care plan tiers | `src/data/services.ts` (`CARE_PLANS`) |
-| Tailwind theme: brand colors, fonts, hard shadows, custom utilities (`awning`, `text-outline`, `container`) | `src/styles/global.css` |
-| Shared UI: `Button`, `SectionHead` | `src/components/ui/` |
-| Page sections | `src/components/*.astro` |
-| SEO / Open Graph / favicon | `src/layouts/Base.astro`, `public/` |
+| What                                                                                                        | File                                  |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| Email, booking link, form endpoint                                                                          | `src/data/site.ts`                    |
+| Services, prices, what's included, Stripe links                                                             | `src/data/services.ts`                |
+| Care plan tiers                                                                                             | `src/data/services.ts` (`CARE_PLANS`) |
+| Tailwind theme: brand colors, fonts, hard shadows, custom utilities (`awning`, `text-outline`, `container`) | `src/styles/global.css`               |
+| Shared UI: `Button`, `SectionHead`                                                                          | `src/components/ui/`                  |
+| Page sections                                                                                               | `src/components/*.astro`              |
+| SEO / Open Graph / favicon                                                                                  | `src/layouts/Base.astro`, `public/`   |
 
 ## Before launch (TODOs)
 
