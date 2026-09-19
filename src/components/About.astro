@@ -1,19 +1,27 @@
 ---
-import { Image } from 'astro:assets';
-import mark from '../assets/logo-graphic-cropped.png';
-import SectionHead from './ui/SectionHead.astro';
+import { Image } from 'astro:assets'
+import mark from '../assets/logo-graphic-cropped.png'
+import SectionHead from './ui/SectionHead.astro'
 
 const facts = [
   ['~30', 'years freelancing'],
   ['12', 'years in kitchens'],
   ['1', "person you'll talk to"],
-];
+]
 ---
 
-<section class="border-y-3 border-navy bg-cream-200 py-16 md:py-28" id="about">
+<section
+  class="border-y-3 border-navy bg-cream-200 py-16 md:py-28"
+  id="about"
+>
   <div class="container grid items-center gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
     <div class="relative mx-auto grid aspect-square w-full max-w-75 place-items-center rounded-full border-3 border-navy bg-cream p-[12%] shadow-hard md:max-w-none">
-      <Image src={mark} alt="" width={360} height={360} />
+      <Image
+        src={mark}
+        alt=""
+        width={360}
+        height={360}
+      />
       <p class="absolute -right-1.5 -bottom-1.5 m-0 grid size-30 -rotate-12 place-content-center rounded-full border-3 border-navy bg-flame text-center font-display text-[1.15rem] leading-tight text-cream-100 shadow-hard-sm">
         Est. 2006
         <span class="font-head text-xs tracking-[0.05em]">Fort Worth, TX</span>
@@ -21,24 +29,37 @@ const facts = [
     </div>
 
     <div>
-      <SectionHead eyebrow="Meet the ringmaster" title="Hi, I'm Jason." spacing="sm" />
+      <SectionHead
+        eyebrow="Meet the ringmaster"
+        title="Hi, I'm Jason."
+        spacing="sm"
+      />
       <div class="space-y-4 text-[1.1rem] text-navy/75">
         <p>
-          I've been fixing, building and explaining technology for small businesses since 2006 under <strong class="text-navy">3ME Computing</strong>.
-          Funhouse Atelier is the creative side of that shop: the place where websites, digital products and new tools get made.
+          I've been fixing, building and explaining technology for small
+          businesses since 2006 under{' '}
+          <strong class="text-navy">3ME Computing</strong>. Funhouse Atelier is
+          the creative side of that shop: the place where websites, digital
+          products and new tools get made.
         </p>
         <p>
-          Before tech took over, I spent about a dozen years in professional kitchens, running the line as a sous chef and chef de cuisine.
-          That's where I learned to work fast, hit a deadline, and keep a promise when the ticket rail is full. I run projects the same way.
+          Before tech took over, I spent about a dozen years in professional
+          kitchens, running the line as a sous chef and chef de cuisine. That's
+          where I learned to work fast, hit a deadline, and keep a promise when
+          the ticket rail is full. I run projects the same way.
         </p>
         <p>
-          These days I also work on training and evaluating AI models, so when I set up AI for your business, it comes from hands-on experience, not a sales pitch.
+          These days I also work on training and evaluating AI models, so when I
+          set up AI for your business, it comes from hands-on experience, not a
+          sales pitch.
         </p>
       </div>
       <ul class="mt-7 flex flex-wrap gap-4">
         {facts.map(([n, label]) => (
           <li class="flex-[1_1_140px] rounded-[14px] border-3 border-navy bg-cream-100 px-4.5 py-4">
-            <strong class="block font-display text-[2rem] leading-none text-flame">{n}</strong>
+            <strong class="block font-display text-[2rem] leading-none text-flame">
+              {n}
+            </strong>
             <span class="text-[0.92rem] text-navy/75">{label}</span>
           </li>
         ))}

@@ -1,10 +1,13 @@
 ---
-import Button from './ui/Button.astro';
-import SectionHead from './ui/SectionHead.astro';
-import { CARE_PLANS } from '../data/services';
+import Button from './ui/Button.astro'
+import SectionHead from './ui/SectionHead.astro'
+import { CARE_PLANS } from '../data/services'
 ---
 
-<section class="bg-navy py-16 text-cream md:py-28" id="care-plans">
+<section
+  class="bg-navy py-16 text-cream md:py-28"
+  id="care-plans"
+>
   <div class="container">
     <SectionHead
       eyebrow="Keep the show running"
@@ -27,7 +30,9 @@ import { CARE_PLANS } from '../data/services';
               Best value
             </span>
           )}
-          <h3 class="mb-1 font-display text-[1.7rem] font-normal text-flame">{p.name}</h3>
+          <h3 class="mb-1 font-display text-[1.7rem] font-normal text-flame">
+            {p.name}
+          </h3>
           <p class="m-0 font-head text-navy/75">
             <strong class="text-[2.6rem] text-navy">{p.price}</strong>/mo
           </p>
@@ -39,14 +44,18 @@ import { CARE_PLANS } from '../data/services';
               </li>
             ))}
           </ul>
-          <Button href={p.checkoutUrl || '/#contact'} variant={p.featured ? 'primary' : 'plain'}>
+          <Button
+            href={p.checkoutUrl || '/#contact'}
+            variant={p.featured ? 'primary' : 'plain'}
+          >
             Choose {p.name}
           </Button>
         </article>
       ))}
     </div>
     <p class="mx-auto mt-10 max-w-[60ch] text-center text-[0.98rem] text-cream/80">
-      Already have a site somewhere else? Care plans work for existing WordPress sites too. A one-time onboarding check may apply.
+      Already have a site somewhere else? Care plans work for existing WordPress
+      sites too. A one-time onboarding check may apply.
     </p>
   </div>
 </section>

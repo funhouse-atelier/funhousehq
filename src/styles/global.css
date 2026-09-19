@@ -1,7 +1,7 @@
-@import "tailwindcss";
-@import "@fontsource/rye/latin-400.css";
-@import "@fontsource-variable/fredoka/index.css";
-@import "@fontsource-variable/nunito/index.css";
+@import 'tailwindcss';
+@import '@fontsource/rye/latin-400.css';
+@import '@fontsource-variable/fredoka/index.css';
+@import '@fontsource-variable/nunito/index.css';
 
 @theme {
   /* Brand palette */
@@ -72,10 +72,10 @@
   --color-grape-900: #1a0014;
 
   /* Type: font-display (Rye), font-head (Fredoka), font-sans (body default) */
-  --font-display: "Rye", Georgia, serif;
+  --font-display: 'Rye', Georgia, serif;
   --font-head:
-    "Fredoka Variable", "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
+    'Fredoka Variable', 'Nunito Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Nunito Variable', ui-sans-serif, system-ui, sans-serif;
 
   /* Hard "sticker" shadows that match the logo's thick outlines.
      Recolor with shadow-flame, shadow-marigold, etc. */
@@ -118,7 +118,7 @@
     scroll-padding-top: 88px;
   }
   body {
-    @apply bg-cream text-navy font-sans text-[1.0625rem] leading-relaxed antialiased;
+    @apply bg-cream font-sans text-[1.0625rem] leading-relaxed text-navy antialiased;
   }
   h1,
   h2,

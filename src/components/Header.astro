@@ -1,27 +1,50 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/logo-graphic-cropped.png';
-import Button from './ui/Button.astro';
-import { SITE, NAV } from '../data/site';
+import { Image } from 'astro:assets'
+import logo from '../assets/logo-graphic-cropped.png'
+import Button from './ui/Button.astro'
+import { SITE, NAV } from '../data/site'
 ---
 
 <header class="sticky top-0 z-50 border-b-3 border-navy bg-cream/90 backdrop-blur-md">
   <div class="container flex min-h-18 items-center justify-between gap-4">
-    <a href="/" class="flex items-center gap-2.5 no-underline" aria-label={`${SITE.name} home`}>
-      <Image src={logo} alt="" width={52} height={52} densities={[1, 2]} loading="eager" />
+    <a
+      href="/"
+      class="flex items-center gap-2.5 no-underline"
+      aria-label={`${SITE.name} home`}
+    >
+      <Image
+        src={logo}
+        alt=""
+        width={52}
+        height={52}
+        densities={[1, 2]}
+        loading="eager"
+      />
       <span class="font-display text-[1.35rem] tracking-[0.02em] text-flame [-webkit-text-stroke:0.6px_var(--color-navy)]">
         Funhouse <span class="text-marigold-600">Atelier</span>
       </span>
     </a>
 
     <!-- CSS-only mobile menu: the checkbox is the toggle, nav reacts with peer-checked -->
-    <input type="checkbox" id="nav-toggle" class="peer sr-only" aria-label="Toggle menu" />
+    <input
+      type="checkbox"
+      id="nav-toggle"
+      class="peer sr-only"
+      aria-label="Toggle menu"
+    />
     <label
       for="nav-toggle"
       class="grid size-11 cursor-pointer place-items-center rounded-xl border-3 border-navy bg-cream-100 peer-focus-visible:outline-3 peer-focus-visible:outline-flame lg:hidden"
       aria-hidden="true"
     >
-      <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <svg
+        viewBox="0 0 24 24"
+        class="size-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+      >
         <path d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </label>
@@ -42,7 +65,15 @@ import { SITE, NAV } from '../data/site';
           </li>
         ))}
       </ul>
-      <Button href={SITE.bookingUrl} variant="primary" size="sm" target="_blank" rel="noopener">Book a call</Button>
+      <Button
+        href={SITE.bookingUrl}
+        variant="primary"
+        size="sm"
+        target="_blank"
+        rel="noopener"
+      >
+        Book a call
+      </Button>
     </nav>
   </div>
 </header>
@@ -51,8 +82,8 @@ import { SITE, NAV } from '../data/site';
   // Close the mobile menu after picking a link.
   document.querySelectorAll<HTMLAnchorElement>('header nav a').forEach((a) =>
     a.addEventListener('click', () => {
-      const t = document.getElementById('nav-toggle') as HTMLInputElement | null;
-      if (t) t.checked = false;
-    }),
-  );
+      const t = document.getElementById('nav-toggle') as HTMLInputElement | null
+      if (t) t.checked = false
+    })
+  )
 </script>

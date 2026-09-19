@@ -1,17 +1,21 @@
 ---
-import Button from './ui/Button.astro';
-import SectionHead from './ui/SectionHead.astro';
-import { SITE } from '../data/site';
-import { SERVICES } from '../data/services';
+import Button from './ui/Button.astro'
+import SectionHead from './ui/SectionHead.astro'
+import { SITE } from '../data/site'
+import { SERVICES } from '../data/services'
 
-const label = 'grid gap-1.5';
-const labelText = 'font-head font-medium';
-const field = 'w-full rounded-[10px] border-2 border-navy bg-cream-200 px-3.5 py-3 text-navy';
+const label = 'grid gap-1.5'
+const labelText = 'font-head font-medium'
+const field =
+  'w-full rounded-[10px] border-2 border-navy bg-cream-200 px-3.5 py-3 text-navy'
 const option =
-  'flex flex-col rounded-[14px] border-3 border-navy bg-cream-200 px-5.5 py-4.5 text-navy no-underline shadow-hard-sm motion-safe:transition hover:-translate-x-0.5 hover:-translate-y-0.5';
+  'flex flex-col rounded-[14px] border-3 border-navy bg-cream-200 px-5.5 py-4.5 text-navy no-underline shadow-hard-sm motion-safe:transition hover:-translate-x-0.5 hover:-translate-y-0.5'
 ---
 
-<section class="border-t-3 border-navy bg-marigold py-16 md:py-28" id="contact">
+<section
+  class="border-t-3 border-navy bg-marigold py-16 md:py-28"
+  id="contact"
+>
   <div class="container grid items-start gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
     <div>
       <SectionHead
@@ -22,60 +26,134 @@ const option =
         spacing="sm"
       />
       <div class="grid gap-3.5">
-        <a class={option} href={SITE.bookingUrl} target="_blank" rel="noopener">
-          <strong class="font-head text-[1.15rem]">Book a free 20-minute call</strong>
+        <a
+          class={option}
+          href={SITE.bookingUrl}
+          target="_blank"
+          rel="noopener"
+        >
+          <strong class="font-head text-[1.15rem]">
+            Book a free 20-minute call
+          </strong>
           <span class="text-navy/75">Pick a time that works for you →</span>
         </a>
-        <a class={option} href={`mailto:${SITE.email}`}>
+        <a
+          class={option}
+          href={`mailto:${SITE.email}`}
+        >
           <strong class="font-head text-[1.15rem]">Email</strong>
           <span class="break-all text-navy/75">{SITE.email}</span>
         </a>
       </div>
     </div>
 
-    <form class="grid gap-4 rounded-[18px] border-3 border-navy bg-cream-100 p-5.5 shadow-hard-lg md:p-9" action={SITE.formEndpoint} method="POST">
-      <input type="hidden" name="_subject" value="New inquiry from funhousehq.com" />
-      <div class="sr-only" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></div>
+    <form
+      class="grid gap-4 rounded-[18px] border-3 border-navy bg-cream-100 p-5.5 shadow-hard-lg md:p-9"
+      action={SITE.formEndpoint}
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="_subject"
+        value="New inquiry from funhousehq.com"
+      />
+      <div
+        class="sr-only"
+        aria-hidden="true"
+      >
+        <input
+          type="text"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
         <label class={label}>
           <span class={labelText}>Your name</span>
-          <input class={field} name="name" type="text" required autocomplete="name" />
+          <input
+            class={field}
+            name="name"
+            type="text"
+            required
+            autocomplete="name"
+          />
         </label>
         <label class={label}>
           <span class={labelText}>Business name</span>
-          <input class={field} name="business" type="text" autocomplete="organization" />
+          <input
+            class={field}
+            name="business"
+            type="text"
+            autocomplete="organization"
+          />
         </label>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
         <label class={label}>
           <span class={labelText}>Email</span>
-          <input class={field} name="email" type="email" required autocomplete="email" />
+          <input
+            class={field}
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+          />
         </label>
         <label class={label}>
-          <span class={labelText}>Phone <em class="font-normal text-navy/75 not-italic">(optional)</em></span>
-          <input class={field} name="phone" type="tel" autocomplete="tel" />
+          <span class={labelText}>
+            Phone{' '}
+            <em class="font-normal text-navy/75 not-italic">(optional)</em>
+          </span>
+          <input
+            class={field}
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+          />
         </label>
       </div>
       <label class={label}>
         <span class={labelText}>I'm interested in</span>
-        <select class={field} name="service" id="service-select">
+        <select
+          class={field}
+          name="service"
+          id="service-select"
+        >
           <option value="">Not sure yet</option>
-          {SERVICES.map((s) => <option value={s.id}>{s.name}</option>)}
+          {SERVICES.map((s) => (
+            <option value={s.id}>{s.name}</option>
+          ))}
         </select>
       </label>
       <label class={label}>
         <span class={labelText}>What's going on?</span>
-        <textarea class:list={[field, 'resize-y']} name="message" rows="5" required placeholder="Current website (if any), what you'd like to change, any deadlines…"></textarea>
+        <textarea
+          class:list={[field, 'resize-y']}
+          name="message"
+          rows="5"
+          required
+          placeholder="Current website (if any), what you'd like to change, any deadlines…"
+        ></textarea>
       </label>
-      <Button type="submit" variant="primary" class="justify-self-stretch sm:justify-self-start">Send it</Button>
+      <Button
+        type="submit"
+        variant="primary"
+        class="justify-self-stretch sm:justify-self-start"
+      >
+        Send it
+      </Button>
     </form>
   </div>
 </section>
 
 <script>
   // Preselect the service when arriving from a "Get started" button (/?service=id#contact).
-  const id = new URLSearchParams(location.search).get('service');
-  const select = document.getElementById('service-select') as HTMLSelectElement | null;
-  if (id && select && [...select.options].some((o) => o.value === id)) select.value = id;
+  const id = new URLSearchParams(location.search).get('service')
+  const select = document.getElementById(
+    'service-select'
+  ) as HTMLSelectElement | null
+  if (id && select && [...select.options].some((o) => o.value === id))
+    select.value = id
 </script>

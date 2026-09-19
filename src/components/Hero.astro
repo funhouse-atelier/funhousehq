@@ -1,20 +1,22 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/logo-bg-trans.png';
-import Button from './ui/Button.astro';
-import { SITE } from '../data/site';
+import { Image } from 'astro:assets'
+import logo from '../assets/logo-bg-trans.png'
+import Button from './ui/Button.astro'
+import { SITE } from '../data/site'
 
 const proof = [
   ['20 yrs', 'in business as 3ME Computing'],
   ['7 days', 'from kickoff to launch'],
   ['Flat', 'pricing, no surprises'],
-];
+]
 ---
 
 <section class="overflow-hidden pt-10 pb-10 md:pt-20 md:pb-18">
   <div class="container grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-16">
     <div>
-      <span class="mb-3 inline-block font-head text-sm font-semibold tracking-[0.12em] text-grape uppercase">Fort Worth digital agency</span>
+      <span class="mb-3 inline-block font-head text-sm font-semibold tracking-[0.12em] text-grape uppercase">
+        Fort Worth digital agency
+      </span>
       <h1 class="mb-[0.4em] font-display text-[clamp(2.5rem,6vw,4.4rem)] leading-[1.02] font-normal text-flame text-outline [text-shadow:3px_3px_0_var(--color-grape)]">
         Step right up.
         <span class="mt-[0.3em] block font-head text-[0.5em] leading-tight font-semibold text-navy [-webkit-text-stroke:0] [text-shadow:none]">
@@ -22,15 +24,29 @@ const proof = [
         </span>
       </h1>
       <p class="max-w-[52ch] text-xl text-navy/75">
-        {SITE.slogan} Websites, care plans, IT support, AI setup and restaurant tech: fixed prices, paid up front, delivered on schedule.
+        {SITE.slogan} Websites, care plans, IT support, AI setup and restaurant
+        tech: fixed prices, paid up front, delivered on schedule.
       </p>
       <div class="my-7 flex flex-wrap gap-3.5">
-        <Button href="/#services" variant="primary">See the services</Button>
-        <Button href={SITE.bookingUrl} target="_blank" rel="noopener">Book a free call</Button>
+        <Button
+          href="/#services"
+          variant="primary"
+        >
+          See the services
+        </Button>
+        <Button
+          href={SITE.bookingUrl}
+          target="_blank"
+          rel="noopener"
+        >
+          Book a free call
+        </Button>
       </div>
       <ul class="flex flex-wrap gap-x-7 gap-y-2.5 text-[0.98rem] text-navy/75">
         {proof.map(([k, v]) => (
-          <li><strong class="font-head text-navy">{k}</strong> {v}</li>
+          <li>
+            <strong class="font-head text-navy">{k}</strong> {v}
+          </li>
         ))}
       </ul>
     </div>
@@ -39,8 +55,7 @@ const proof = [
       <div
         class="absolute aspect-square w-[92%] rounded-full bg-[repeating-conic-gradient(var(--color-cream-600)_0_10deg,transparent_10deg_20deg)] opacity-45 motion-safe:animate-spin-slow"
         aria-hidden="true"
-      >
-      </div>
+      ></div>
       <Image
         src={logo}
         alt="Funhouse Atelier logo: a red and cream circus tent workshop"
@@ -52,4 +67,7 @@ const proof = [
     </div>
   </div>
 </section>
-<div class="awning" aria-hidden="true"></div>
+<div
+  class="awning"
+  aria-hidden="true"
+></div>

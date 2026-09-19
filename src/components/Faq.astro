@@ -1,5 +1,5 @@
 ---
-import SectionHead from './ui/SectionHead.astro';
+import SectionHead from './ui/SectionHead.astro'
 
 const faqs = [
   {
@@ -22,12 +22,19 @@ const faqs = [
     q: "What if I need something that isn't listed?",
     a: "Custom web apps, integrations, online stores and one-off projects are all on the table. Book a call and we'll scope it together.",
   },
-];
+]
 ---
 
-<section class="py-16 md:py-28" id="faq">
+<section
+  class="py-16 md:py-28"
+  id="faq"
+>
   <div class="container max-w-205">
-    <SectionHead eyebrow="Questions from the crowd" title="FAQ" center />
+    <SectionHead
+      eyebrow="Questions from the crowd"
+      title="FAQ"
+      center
+    />
     <div class="grid gap-3.5">
       {faqs.map((f) => (
         <details class="group rounded-[14px] border-3 border-navy bg-cream-100 shadow-hard-sm">

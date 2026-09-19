@@ -1,36 +1,46 @@
 ---
 // Pill button with a hard shadow. Renders <a> when given href, otherwise <button>.
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types'
 
 type Props = (HTMLAttributes<'a'> & HTMLAttributes<'button'>) & {
-  variant?: 'primary' | 'gold' | 'plain';
-  size?: 'md' | 'sm';
-};
+  variant?: 'primary' | 'gold' | 'plain'
+  size?: 'md' | 'sm'
+}
 
-const { href, variant = 'plain', size = 'md', class: className, ...rest } = Astro.props;
+const {
+  href,
+  variant = 'plain',
+  size = 'md',
+  class: className,
+  ...rest
+} = Astro.props
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full border-3 border-navy font-head font-semibold no-underline shadow-hard-sm cursor-pointer motion-safe:transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-xs';
+  'inline-flex items-center justify-center gap-2 rounded-full border-3 border-navy font-head font-semibold no-underline shadow-hard-sm cursor-pointer motion-safe:transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-xs'
 const sizes = {
   md: 'px-6 py-3 text-[1.05rem]',
   sm: 'px-4 py-2 text-base',
-};
+}
 const variants = {
   primary: 'bg-flame text-cream-100',
   gold: 'bg-marigold text-navy',
   plain: 'bg-cream-100 text-navy',
-};
-const classes = [base, sizes[size], variants[variant], className];
+}
+const classes = [base, sizes[size], variants[variant], className]
 ---
 
-{
-  href ? (
-    <a href={href} class:list={classes} {...rest}>
-      <slot />
-    </a>
-  ) : (
-    <button class:list={classes} {...rest}>
-      <slot />
-    </button>
-  )
+{href ?
+  <a
+    href={href}
+    class:list={classes}
+    {...rest}
+  >
+    <slot />
+  </a>
+: <button
+    class:list={classes}
+    {...rest}
+  >
+    <slot />
+  </button>
 }

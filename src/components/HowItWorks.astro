@@ -1,5 +1,5 @@
 ---
-import SectionHead from './ui/SectionHead.astro';
+import SectionHead from './ui/SectionHead.astro'
 
 const steps = [
   {
@@ -18,12 +18,19 @@ const steps = [
     title: 'Launch & care',
     body: 'We go live, hand over the keys, and a care plan keeps it running if you want one.',
   },
-];
+]
 ---
 
-<section class="py-16 md:py-28" id="how">
+<section
+  class="py-16 md:py-28"
+  id="how"
+>
   <div class="container">
-    <SectionHead eyebrow="No smoke, no mirrors" title="How it works" center />
+    <SectionHead
+      eyebrow="No smoke, no mirrors"
+      title="How it works"
+      center
+    />
     <ol class="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((s, i) => (
         <li class="group relative px-2 text-center lg:not-last:after:absolute lg:not-last:after:top-8.5 lg:not-last:after:right-[calc(-50%+46px)] lg:not-last:after:left-[calc(50%+46px)] lg:not-last:after:border-t-3 lg:not-last:after:border-dotted lg:not-last:after:border-tan">

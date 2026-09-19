@@ -1,32 +1,63 @@
 ---
 // Eyebrow + Rye title + optional lead paragraph, used at the top of each section.
 interface Props {
-  eyebrow: string;
-  title: string;
-  lead?: string;
-  center?: boolean;
-  tone?: 'light' | 'dark' | 'gold';
-  as?: 'h1' | 'h2';
+  eyebrow: string
+  title: string
+  lead?: string
+  center?: boolean
+  tone?: 'light' | 'dark' | 'gold'
+  as?: 'h1' | 'h2'
   /** Space below the block: 'lg' before card grids, 'sm' before body copy */
-  spacing?: 'lg' | 'sm';
+  spacing?: 'lg' | 'sm'
 }
 
-const { eyebrow, title, lead, center = false, tone = 'light', as: Heading = 'h2', spacing = 'lg' } = Astro.props;
+const {
+  eyebrow,
+  title,
+  lead,
+  center = false,
+  tone = 'light',
+  as: Heading = 'h2',
+  spacing = 'lg',
+} = Astro.props
 
 const tones = {
   light: { eyebrow: 'text-grape', title: 'text-navy', lead: 'text-navy/75' },
-  dark: { eyebrow: 'text-marigold', title: 'text-marigold', lead: 'text-cream/80' },
+  dark: {
+    eyebrow: 'text-marigold',
+    title: 'text-marigold',
+    lead: 'text-cream/80',
+  },
   gold: { eyebrow: 'text-navy', title: 'text-navy', lead: 'text-navy' },
-};
-const t = tones[tone];
+}
+const t = tones[tone]
 ---
 
-<div class:list={[spacing === 'lg' ? 'mb-8 md:mb-14' : 'mb-6', { 'text-center': center }]}>
-  <span class:list={['mb-3 inline-block font-head text-sm font-semibold tracking-[0.12em] uppercase', t.eyebrow]}>
+<div
+  class:list={[
+    spacing === 'lg' ? 'mb-8 md:mb-14' : 'mb-6',
+    { 'text-center': center },
+  ]}
+>
+  <span
+    class:list={[
+      'mb-3 inline-block font-head text-sm font-semibold tracking-[0.12em] uppercase',
+      t.eyebrow,
+    ]}
+  >
     {eyebrow}
   </span>
-  <Heading class:list={['mb-2 font-display text-[clamp(2rem,4.5vw,3rem)] font-normal tracking-[0.01em]', t.title]}>
+  <Heading
+    class:list={[
+      'mb-2 font-display text-[clamp(2rem,4.5vw,3rem)] font-normal tracking-[0.01em]',
+      t.title,
+    ]}
+  >
     {title}
   </Heading>
-  {lead && <p class:list={['max-w-[62ch] text-lg', t.lead, { 'mx-auto': center }]}>{lead}</p>}
+  {lead && (
+    <p class:list={['max-w-[62ch] text-lg', t.lead, { 'mx-auto': center }]}>
+      {lead}
+    </p>
+  )}
 </div>
