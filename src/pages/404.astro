@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/ui/Button.astro';
+import SectionHead from '../components/ui/SectionHead.astro';
+---
+
+<Base title="Page not found">
+  <section class="py-16 md:py-28">
+    <div class="container max-w-180 text-center">
+      <SectionHead
+        as="h1"
+        eyebrow="404"
+        title="Lost in the hall of mirrors."
+        lead="That page doesn't exist, or it wandered off. Let's get you back to the main tent."
+        center
+      />
+      <Button href="/" variant="primary">Take me home</Button>
+    </div>
+  </section>
+</Base>

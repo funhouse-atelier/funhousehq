@@ -1,0 +1,26 @@
+---
+// Point Stripe Payment Links' "after payment" redirect and the contact form's
+// redirect here.
+import Base from '../layouts/Base.astro';
+import Button from '../components/ui/Button.astro';
+import SectionHead from '../components/ui/SectionHead.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Thank you">
+  <section class="py-16 md:py-28">
+    <div class="container max-w-180 text-center">
+      <SectionHead
+        as="h1"
+        eyebrow="You're in"
+        title="Thanks! The show is on."
+        lead="You'll get a confirmation email shortly. Next step: grab a kickoff time so we can get started."
+        center
+      />
+      <div class="flex flex-wrap justify-center gap-3.5">
+        <Button href={SITE.bookingUrl} variant="primary" target="_blank" rel="noopener">Schedule your kickoff</Button>
+        <Button href="/">Back to home</Button>
+      </div>
+    </div>
+  </section>
+</Base>

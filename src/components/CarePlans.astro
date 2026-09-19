@@ -1,0 +1,52 @@
+---
+import Button from './ui/Button.astro';
+import SectionHead from './ui/SectionHead.astro';
+import { CARE_PLANS } from '../data/services';
+---
+
+<section class="bg-navy py-16 text-cream md:py-28" id="care-plans">
+  <div class="container">
+    <SectionHead
+      eyebrow="Keep the show running"
+      title="Care plans"
+      lead="A website is never really finished. Pick a plan and I'll keep yours fast, secure and up to date. Month to month, cancel anytime."
+      center
+      tone="dark"
+    />
+
+    <div class="mx-auto grid max-w-115 items-stretch gap-6 lg:max-w-none lg:grid-cols-3">
+      {CARE_PLANS.map((p) => (
+        <article
+          class:list={[
+            'relative flex flex-col rounded-[18px] border-3 border-navy bg-cream-200 px-6.5 py-7.5 text-navy shadow-[6px_6px_0]',
+            p.featured ? 'shadow-flame lg:-translate-y-3' : 'shadow-marigold',
+          ]}
+        >
+          {p.featured && (
+            <span class="absolute top-4.5 -right-0.75 rounded-l-full border-2 border-r-0 border-navy bg-marigold py-1 pr-3 pl-3.5 font-head text-[0.82rem] font-semibold">
+              Best value
+            </span>
+          )}
+          <h3 class="mb-1 font-display text-[1.7rem] font-normal text-flame">{p.name}</h3>
+          <p class="m-0 font-head text-navy/75">
+            <strong class="text-[2.6rem] text-navy">{p.price}</strong>/mo
+          </p>
+          <p class="mb-4 text-navy/75">{p.blurb}</p>
+          <ul class="mb-6.5 flex-1">
+            {p.features.map((f) => (
+              <li class="relative border-b border-tan-200 py-2 pl-7 before:absolute before:left-0.5 before:font-extrabold before:text-flame before:content-['✓']">
+                {f}
+              </li>
+            ))}
+          </ul>
+          <Button href={p.checkoutUrl || '/#contact'} variant={p.featured ? 'primary' : 'plain'}>
+            Choose {p.name}
+          </Button>
+        </article>
+      ))}
+    </div>
+    <p class="mx-auto mt-10 max-w-[60ch] text-center text-[0.98rem] text-cream/80">
+      Already have a site somewhere else? Care plans work for existing WordPress sites too. A one-time onboarding check may apply.
+    </p>
+  </div>
+</section>

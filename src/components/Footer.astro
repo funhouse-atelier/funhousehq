@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-graphic-cropped.png';
+import { SITE, NAV } from '../data/site';
+const year = new Date().getFullYear();
+const link = 'text-cream-200 no-underline hover:text-marigold';
+---
+
+<footer class="bg-navy pt-14 pb-7 text-cream/80">
+  <div class="container grid items-start gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div class="flex items-center gap-3.5">
+      <Image src={logo} alt="" width={64} height={64} densities={[1, 2]} class="rounded-full border-2 border-marigold bg-cream p-1.5" />
+      <div>
+        <p class="font-display text-[1.3rem] text-marigold">Funhouse Atelier</p>
+        <p class="text-[0.95rem]">{SITE.slogan}</p>
+      </div>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="grid gap-1.5">
+        {NAV.map((n) => <li><a class={link} href={n.href}>{n.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="grid gap-1.5 break-all">
+      <a class={link} href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <span>{SITE.location}</span>
+    </div>
+  </div>
+  <div class="container mt-10">
+    <p class="border-t border-cream/15 pt-5 text-[0.88rem]">© {year} Funhouse Atelier, a 3ME Computing company. All rights reserved.</p>
+  </div>
+</footer>

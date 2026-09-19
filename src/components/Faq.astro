@@ -1,0 +1,48 @@
+---
+import SectionHead from './ui/SectionHead.astro';
+
+const faqs = [
+  {
+    q: 'Why do you ask for payment up front?',
+    a: "It lets me hold a dedicated week for your project and start immediately. Fixed scope, fixed price, no invoices chasing you later. If I can't deliver what we agreed, you get your money back.",
+  },
+  {
+    q: 'What do I need to have ready?',
+    a: 'Your logo (if you have one), a few photos, and the basics: services, hours, service area and contact info. The intake form walks you through it, and I can write the copy with you.',
+  },
+  {
+    q: 'Do I own my website?',
+    a: "Yes. Your domain is registered in your name and the site is yours. Care plans are optional, and if you leave, I'll help you move it.",
+  },
+  {
+    q: 'Do you only work in Fort Worth?',
+    a: "I'm based in Fort Worth and happy to meet in person around DFW, but everything can be done remotely for clients anywhere in the US.",
+  },
+  {
+    q: "What if I need something that isn't listed?",
+    a: "Custom web apps, integrations, online stores and one-off projects are all on the table. Book a call and we'll scope it together.",
+  },
+];
+---
+
+<section class="py-16 md:py-28" id="faq">
+  <div class="container max-w-205">
+    <SectionHead eyebrow="Questions from the crowd" title="FAQ" center />
+    <div class="grid gap-3.5">
+      {faqs.map((f) => (
+        <details class="group rounded-[14px] border-3 border-navy bg-cream-100 shadow-hard-sm">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5.5 py-4.5 font-head text-[1.15rem] font-semibold [&::-webkit-details-marker]:hidden">
+            {f.q}
+            <span
+              class="grid size-7.5 flex-none place-items-center rounded-full border-2 border-navy bg-marigold text-xl leading-none motion-safe:transition group-open:rotate-45 group-open:bg-flame group-open:text-cream-100"
+              aria-hidden="true"
+            >
+              +
+            </span>
+          </summary>
+          <p class="px-5.5 pb-5 text-navy/75">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

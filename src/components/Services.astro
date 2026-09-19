@@ -1,0 +1,69 @@
+---
+import Button from './ui/Button.astro';
+import SectionHead from './ui/SectionHead.astro';
+import { SERVICES } from '../data/services';
+
+const icons: Record<string, string> = {
+  'website-in-a-week': '<rect x="3" y="5" width="26" height="20" rx="3"/><path d="M3 11h26M8 8h.01M11 8h.01M14 8h.01M9 17l3 3 6-6"/>',
+  'care-plans': '<path d="M16 28s-10-5.5-10-13V7l10-4 10 4v8c0 7.5-10 13-10 13z"/><path d="M11.5 15.5l3 3 6-6"/>',
+  'it-help-desk': '<path d="M6 17v-3a10 10 0 0 1 20 0v3"/><rect x="4" y="16" width="5" height="8" rx="2"/><rect x="23" y="16" width="5" height="8" rx="2"/><path d="M26 24c0 3-3 4-7 4"/>',
+  'ai-setup': '<rect x="7" y="9" width="18" height="16" rx="4"/><path d="M16 9V5M12 16h.01M20 16h.01M12 21h8M3 15v4M29 15v4"/><circle cx="16" cy="4" r="1.5"/>',
+  'restaurant-tech': '<path d="M9 3v10a3 3 0 0 0 3 3v13M6 3v7M12 3v7M22 29V3c-4 2-5 7-5 12h5"/>',
+};
+---
+
+<section class="py-16 md:py-28" id="services">
+  <div class="container">
+    <SectionHead
+      eyebrow="The main attractions"
+      title="Services"
+      lead="Five fixed-price offers, built to work together. Start with one; most clients end up with two or three."
+      center
+    />
+
+    <!-- 1 col → 2 cols (5th card centered) → 3 on top, 2 centered below -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+      {SERVICES.map((s) => (
+        <article
+          id={s.id}
+          class:list={[
+            'relative flex w-full flex-col rounded-[18px] border-3 px-6.5 pt-7 pb-6.5 shadow-hard',
+            'md:nth-5:col-span-2 md:nth-5:max-w-xl md:nth-5:justify-self-center',
+            'lg:col-span-2 lg:nth-4:col-start-2 lg:nth-5:max-w-none',
+            s.badge ? 'border-flame bg-cream-200 shadow-flame' : 'border-navy bg-cream-100',
+          ]}
+        >
+          {s.badge && (
+            <span class="absolute -top-4 right-5 rounded-full border-2 border-navy bg-flame px-3 py-1 font-head text-[0.8rem] font-semibold tracking-[0.06em] text-cream-100 uppercase">
+              {s.badge}
+            </span>
+          )}
+          <div class="mb-4.5 grid size-14 place-items-center rounded-[14px] border-3 border-navy bg-marigold text-navy" aria-hidden="true">
+            <svg viewBox="0 0 32 32" class="size-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[s.id]} />
+          </div>
+          <h3 class="mb-1 text-[1.45rem]">{s.name}</h3>
+          <p class="mb-4 text-navy/75">{s.tagline}</p>
+          <p class="mb-4 flex flex-wrap items-baseline gap-2 border-y-2 border-dashed border-tan-200 py-3">
+            <strong class="font-head text-[1.7rem] text-flame-600">{s.price}</strong>
+            <span class="text-sm text-navy/75">{s.priceNote}</span>
+          </p>
+          <ul class="mb-6 flex-1 space-y-2">
+            {s.includes.map((i) => (
+              <li class="relative pl-6.5 before:absolute before:top-[0.5em] before:left-0.5 before:size-3 before:rotate-45 before:rounded-[2px] before:border-2 before:border-navy before:bg-marigold">
+                {i}
+              </li>
+            ))}
+          </ul>
+          <Button
+            href={s.checkoutUrl || `/?service=${s.id}#contact`}
+            variant={s.badge ? 'primary' : 'gold'}
+            class="self-start"
+            data-service={s.id}
+          >
+            {s.cta}
+          </Button>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

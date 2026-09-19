@@ -1,0 +1,44 @@
+---
+import SectionHead from './ui/SectionHead.astro';
+
+// Placeholder showcase. Swap each entry for a real project (or a demo build)
+// with a screenshot in src/assets/ once they exist.
+const projects = [
+  { title: 'Restaurant demo', kind: 'Menu site + QR menus', tint: 'var(--color-flame)' },
+  { title: 'Contractor demo', kind: 'Website in a Week', tint: 'var(--color-marigold)' },
+  { title: 'Studio demo', kind: 'Portfolio + booking', tint: 'var(--color-grape)' },
+];
+---
+
+<section class="pb-16 md:pb-28" id="work">
+  <div class="container">
+    <SectionHead
+      eyebrow="Under the big top"
+      title="Recent work"
+      lead="Demo builds you can click through are on the way. Want to see something specific to your industry? Ask on the call."
+    />
+    <div class="grid max-w-130 gap-6 md:max-w-none md:grid-cols-3">
+      {projects.map((p) => (
+        <figure>
+          <div class="overflow-hidden rounded-[14px] border-3 border-navy bg-cream-100 shadow-hard">
+            <div class="flex gap-1.5 border-b-3 border-navy bg-cream-600/60 px-3 py-2.5" aria-hidden="true">
+              <i class="size-2.5 rounded-full border-2 border-navy bg-cream-200"></i>
+              <i class="size-2.5 rounded-full border-2 border-navy bg-cream-200"></i>
+              <i class="size-2.5 rounded-full border-2 border-navy bg-cream-200"></i>
+            </div>
+            <div
+              class="grid aspect-[16/10] place-items-center"
+              style={`background: repeating-linear-gradient(135deg, transparent 0 18px, color-mix(in srgb, ${p.tint} 12%, transparent) 18px 36px), var(--color-cream-200);`}
+            >
+              <span class="rounded-full border-2 border-navy bg-cream-100 px-3.5 py-1.5 font-head font-semibold">Coming soon</span>
+            </div>
+          </div>
+          <figcaption class="mt-3.5 flex flex-col">
+            <strong class="font-head text-[1.15rem]">{p.title}</strong>
+            <span class="text-[0.95rem] text-navy/75">{p.kind}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

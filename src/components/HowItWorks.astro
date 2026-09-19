@@ -1,0 +1,42 @@
+---
+import SectionHead from './ui/SectionHead.astro';
+
+const steps = [
+  {
+    title: 'Pick & pay',
+    body: 'Choose a package and book it online. Fixed price, paid up front, so we can start right away.',
+  },
+  {
+    title: 'Quick intake',
+    body: 'A short form and a 30-minute call. Send your logo, photos and the details only you know.',
+  },
+  {
+    title: 'We build',
+    body: 'You get a preview link midweek and one round of changes. No jargon, no disappearing act.',
+  },
+  {
+    title: 'Launch & care',
+    body: 'We go live, hand over the keys, and a care plan keeps it running if you want one.',
+  },
+];
+---
+
+<section class="py-16 md:py-28" id="how">
+  <div class="container">
+    <SectionHead eyebrow="No smoke, no mirrors" title="How it works" center />
+    <ol class="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      {steps.map((s, i) => (
+        <li class="group relative px-2 text-center lg:not-last:after:absolute lg:not-last:after:top-8.5 lg:not-last:after:right-[calc(-50%+46px)] lg:not-last:after:left-[calc(50%+46px)] lg:not-last:after:border-t-3 lg:not-last:after:border-dotted lg:not-last:after:border-tan">
+          <span
+            class="mb-4 inline-grid size-17 place-items-center rounded-full border-3 border-navy bg-flame font-display text-[1.8rem] text-cream-100 shadow-hard-sm group-even:bg-marigold group-even:text-navy"
+            aria-hidden="true"
+          >
+            {i + 1}
+          </span>
+          <h3 class="mb-2 text-[1.3rem]">{s.title}</h3>
+          <p class="text-navy/75">{s.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
