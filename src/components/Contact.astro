@@ -47,26 +47,37 @@ const option =
       </div>
     </div>
 
+    <!-- Netlify Forms: detected at deploy time; submissions land in the Netlify dashboard and by email -->
     <form
       class="grid gap-4 rounded-[18px] border-3 border-navy bg-cream-100 p-5.5 shadow-hard-lg md:p-9"
-      action={SITE.formEndpoint}
+      name="contact"
       method="POST"
+      action="/sent/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
     >
       <input
         type="hidden"
-        name="_subject"
+        name="form-name"
+        value="contact"
+      />
+      <input
+        type="hidden"
+        name="subject"
         value="New inquiry from funhousehq.com"
       />
       <div
         class="sr-only"
         aria-hidden="true"
       >
-        <input
-          type="text"
-          name="_gotcha"
-          tabindex="-1"
-          autocomplete="off"
-        />
+        <label>
+          Leave this empty
+          <input
+            name="bot-field"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </label>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">

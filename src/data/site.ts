@@ -8,15 +8,10 @@ export const SITE = {
     'Funhouse Atelier is a Fort Worth digital agency: fast small-business websites, care plans, IT help desk, AI setup, and restaurant tech.',
   location: 'Fort Worth, Texas',
 
-  // TODO: confirm the public inbox you want on the site.
-  email: 'hello@funhousehq.com',
+  email: 'info@funhousehq.com',
 
   // TODO: replace with your Cal.com booking link (e.g. https://cal.com/funhouse/discovery).
   bookingUrl: 'https://cal.com/',
-
-  // TODO: form backend. Any service that accepts a plain HTML POST works
-  // (Formspree, Web3Forms, Basin, or a Cloudflare/Netlify function later).
-  formEndpoint: 'https://formspree.io/f/YOUR_FORM_ID',
 }
 
 export const NAV = [

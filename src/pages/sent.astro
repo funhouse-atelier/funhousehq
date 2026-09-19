@@ -1,0 +1,32 @@
+---
+// Redirect target for the contact form (Netlify Forms).
+import Base from '../layouts/Base.astro'
+import Button from '../components/ui/Button.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import { SITE } from '../data/site'
+---
+
+<Base title="Message sent">
+  <section class="py-16 md:py-28">
+    <div class="container max-w-180 text-center">
+      <SectionHead
+        as="h1"
+        eyebrow="Message received"
+        title="Thanks! I'll be in touch."
+        lead="I reply within one business day, usually sooner. If it's easier to talk it through, grab a time for a free call."
+        center
+      />
+      <div class="flex flex-wrap justify-center gap-3.5">
+        <Button
+          href={SITE.bookingUrl}
+          variant="primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Book a free call
+        </Button>
+        <Button href="/">Back to home</Button>
+      </div>
+    </div>
+  </section>
+</Base>

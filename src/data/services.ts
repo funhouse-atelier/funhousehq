@@ -19,7 +19,7 @@ export const SERVICES: Service[] = [
     name: 'Website in a Week',
     tagline:
       'A professional small-business site, live seven days after kickoff.',
-    price: '$950',
+    price: 'from $500',
     priceNote: 'one-time, paid at booking',
     includes: [
       'Up to 5 pages, built mobile-first',
@@ -37,7 +37,7 @@ export const SERVICES: Service[] = [
     id: 'care-plans',
     name: 'Website Care Plans',
     tagline: 'Updates, backups, security and small edits, handled every month.',
-    price: 'from $49',
+    price: 'from $50',
     priceNote: 'per month, cancel anytime',
     includes: [
       'Hosting on fast, managed servers',
@@ -51,10 +51,9 @@ export const SERVICES: Service[] = [
   {
     id: 'it-help-desk',
     name: 'IT Help Desk',
-    tagline:
-      'Flat-rate tech support for home offices and small teams, by 3ME Computing.',
-    price: 'from $39',
-    priceNote: 'per month · offices from $99',
+    tagline: 'Flat-rate tech support for home offices and small teams.',
+    price: 'from $40',
+    priceNote: 'per month · offices from $100',
     includes: [
       'Remote support when something breaks',
       'Backup and security check-ups',
@@ -109,7 +108,7 @@ export type Plan = {
 export const CARE_PLANS: Plan[] = [
   {
     name: 'Essentials',
-    price: '$49',
+    price: '$50',
     blurb: 'Keep the lights on and the site safe.',
     features: [
       'Managed hosting and SSL',
@@ -122,7 +121,7 @@ export const CARE_PLANS: Plan[] = [
   },
   {
     name: 'Growth',
-    price: '$99',
+    price: '$100',
     blurb: 'For businesses that change often.',
     features: [
       'Everything in Essentials',
@@ -136,7 +135,7 @@ export const CARE_PLANS: Plan[] = [
   },
   {
     name: 'Priority',
-    price: '$149',
+    price: '$150',
     blurb: 'Your part-time web department.',
     features: [
       'Everything in Growth',
