@@ -1,7 +1,9 @@
 {
   "tailwindCSS.experimental.configFile": "src/styles/global.css",
+  "tailwindCSS.classAttributes": ["class", "class:list"],
   "files.associations": { "*.css": "tailwindcss" },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" }
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
 }
