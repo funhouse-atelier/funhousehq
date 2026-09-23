@@ -24,7 +24,7 @@ export const SERVICES: Service[] = [
     includes: [
       'Up to 5 pages, built mobile-first',
       'Domain, DNS and business email setup',
-      'Google Business Profile hookup',
+      'Google Business Profile claimed and set up',
       'Contact form and click-to-call',
       'On-page SEO basics and analytics',
       'One round of revisions',
@@ -47,6 +47,24 @@ export const SERVICES: Service[] = [
     ],
     cta: 'Compare plans',
     checkoutUrl: '/#care-plans',
+  },
+  {
+    id: 'digital-reputation',
+    name: 'Digital Reputation Management',
+    tagline:
+      'Your listings kept current and your reviews answered, every week.',
+    price: 'from $75',
+    priceNote: 'per month · 3 platforms included',
+    includes: [
+      'Google Business Profile kept current',
+      'Facebook, Instagram and LinkedIn pages maintained',
+      'Reviews and mentions checked every 48 hours',
+      'Replies drafted for your approval within 2 days',
+      'A monthly summary of what people are saying',
+      'More platforms, photography and video available',
+    ],
+    cta: 'Mind my reputation',
+    checkoutUrl: '', // TODO: Stripe subscription link
   },
   {
     id: 'it-help-desk',
@@ -89,7 +107,7 @@ export const SERVICES: Service[] = [
       'Menu-first website that is easy to update',
       'Printable QR menus for tables and windows',
       'Online ordering integration',
-      'Google profile, hours and photos cleaned up',
+      'Google profile, hours and photos set up',
     ],
     cta: 'Talk shop',
     checkoutUrl: '',
@@ -128,7 +146,7 @@ export const CARE_PLANS: Plan[] = [
       'Weekly updates',
       '2 hrs of edits / month',
       'Monthly traffic report',
-      'Google profile upkeep',
+      'Small design tweaks',
     ],
     checkoutUrl: '',
     featured: true,
